@@ -216,7 +216,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Cocktail Recommendation System</h1>
 <h4 class="author"><em>by Denis Sharoukhov, PhD</em></h4>
-<h4 class="date"><em>Updated: 8/6/2017</em></h4>
+<h4 class="date"><em>Aug 8, 2017</em></h4>
 
 </div>
 
@@ -266,46 +266,27 @@ data_base&lt;-data_base[,-1]
 # Display first 5 rows
 # head(data_base, n=5)
 
-str(data_base)</code></pre>
-<pre><code>## 'data.frame':    3202 obs. of  38 variables:
-##  $ drinks.idDrink        : int  11000 11001 11002 11003 11004 11005 11006 11007 11008 11009 ...
-##  $ drinks.strDrink       : Factor w/ 3202 levels &quot;'57 Chevy with a White License Plate&quot;,..: 18 21 25 27 29 40 43 47 48 49 ...
-##  $ drinks.strCategory    : Factor w/ 11 levels &quot;Beer&quot;,&quot;Cocktail&quot;,..: 7 7 7 7 7 7 7 7 7 7 ...
-##  $ drinks.strAlcoholic   : Factor w/ 4 levels &quot;Alcoholic&quot;,&quot;NA&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ drinks.strGlass       : Factor w/ 25 levels &quot;Beer mug&quot;,&quot;Beer pilsner&quot;,..: 9 9 5 5 9 14 5 5 9 5 ...
-##  $ drinks.strInstructions: Factor w/ 2679 levels &quot;- Put Irish Cream in large glass and microwave on HIGH power for half a minute or so. - While that's going, rim the shot glasse&quot;| __truncated__,..: 1918 831 2333 2193 1578 344 783 2509 1836 728 ...
-##  $ drinks.strDrinkThumb  : Factor w/ 125 levels &quot;http://www.thecocktaildb.com/images/media/drink/qpvxsx1439906903.jpg&quot;,..: 125 125 125 125 125 125 125 125 125 125 ...
-##  $ drinks.strIngredient1 : Factor w/ 298 levels &quot;151 proof rum&quot;,..: 172 172 25 123 105 172 105 263 258 241 ...
-##  $ drinks.strIngredient2 : Factor w/ 337 levels &quot;151 proof rum&quot;,..: 137 14 148 219 234 311 183 280 221 300 ...
-##  $ drinks.strIngredient3 : Factor w/ 303 levels &quot;151 proof rum&quot;,..: 175 203 NA 201 203 180 144 202 96 115 ...
-##  $ drinks.strIngredient4 : Factor w/ 237 levels &quot;151 proof rum&quot;,..: NA 129 NA 46 NA 208 NA NA 57 156 ...
-##  $ drinks.strIngredient5 : Factor w/ 176 levels &quot;151 proof rum&quot;,..: NA 68 NA NA NA 61 NA NA NA NA ...
-##  $ drinks.strIngredient6 : Factor w/ 120 levels &quot;151 proof rum&quot;,..: NA 69 NA NA NA 79 NA NA NA NA ...
-##  $ drinks.strIngredient7 : Factor w/ 82 levels &quot;151 proof rum&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strIngredient8 : Factor w/ 59 levels &quot;151 proof rum&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strIngredient9 : Factor w/ 25 levels &quot;Beer&quot;,&quot;Chambord raspberry liqueur&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strIngredient10: Factor w/ 15 levels &quot;151 proof rum&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strIngredient11: Factor w/ 9 levels &quot;Brandy&quot;,&quot;Cranberry juice&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strIngredient12: Factor w/ 2 levels &quot;Food coloring&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strIngredient13: Factor w/ 1 level &quot;NA&quot;: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strIngredient14: Factor w/ 1 level &quot;NA&quot;: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strIngredient15: Factor w/ 1 level &quot;NA&quot;: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strMeasure1    : Factor w/ 464 levels &quot; (Dole)\n&quot;,&quot; cubes\n&quot;,..: 254 81 23 23 23 23 254 344 254 23 ...
-##  $ drinks.strMeasure2    : Factor w/ 481 levels &quot; &quot;,&quot; (Absolut)\n&quot;,..: 363 88 88 69 274 42 88 36 274 88 ...
-##  $ drinks.strMeasure3    : Factor w/ 496 levels &quot; &quot;,&quot; (190 proof)\n&quot;,..: 125 90 1 462 303 116 119 67 253 90 ...
-##  $ drinks.strMeasure4    : Factor w/ 386 levels &quot; &quot;,&quot; (Burgundy)\n&quot;,..: 1 126 1 32 1 101 1 1 20 190 ...
-##  $ drinks.strMeasure5    : Factor w/ 246 levels &quot; &quot;,&quot; (Farris)\n&quot;,..: 1 164 1 1 1 24 1 1 17 1 ...
-##  $ drinks.strMeasure6    : Factor w/ 153 levels &quot; &quot;,&quot; (optional)\n&quot;,..: 1 51 1 1 1 13 1 1 10 1 ...
-##  $ drinks.strMeasure7    : Factor w/ 105 levels &quot; &quot;,&quot; (optional)\n&quot;,..: 1 1 1 1 1 1 1 1 8 1 ...
-##  $ drinks.strMeasure8    : Factor w/ 63 levels &quot; &quot;,&quot; (caster sugar)\n&quot;,..: 1 1 NA 1 1 1 1 1 6 1 ...
-##  $ drinks.strMeasure9    : Factor w/ 24 levels &quot; &quot;,&quot; bits\n&quot;,..: NA 1 NA 1 NA 1 NA NA 4 1 ...
-##  $ drinks.strMeasure10   : Factor w/ 14 levels &quot; &quot;,&quot; pats\n&quot;,..: NA 1 NA NA NA 1 NA NA NA NA ...
-##  $ drinks.strMeasure11   : Factor w/ 11 levels &quot; &quot;,&quot;\n&quot;,&quot;1 1/2 cup &quot;,..: NA 1 NA NA NA 1 NA NA NA NA ...
-##  $ drinks.strMeasure12   : Factor w/ 4 levels &quot; &quot;,&quot;\n&quot;,&quot;1 drop green &quot;,..: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strMeasure13   : Factor w/ 3 levels &quot; &quot;,&quot;\n&quot;,&quot;NA&quot;: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strMeasure14   : Factor w/ 3 levels &quot; &quot;,&quot;\n&quot;,&quot;NA&quot;: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.strMeasure15   : Factor w/ 3 levels &quot; &quot;,&quot;\n&quot;,&quot;NA&quot;: NA NA NA NA NA NA NA NA NA NA ...
-##  $ drinks.dateModified   : Factor w/ 124 levels &quot;2015-08-13 10:12:27&quot;,..: 124 124 124 124 124 124 124 124 124 124 ...</code></pre>
+# Display column names
+colnames(data_base)</code></pre>
+<pre><code>##  [1] &quot;drinks.idDrink&quot;         &quot;drinks.strDrink&quot;       
+##  [3] &quot;drinks.strCategory&quot;     &quot;drinks.strAlcoholic&quot;   
+##  [5] &quot;drinks.strGlass&quot;        &quot;drinks.strInstructions&quot;
+##  [7] &quot;drinks.strDrinkThumb&quot;   &quot;drinks.strIngredient1&quot; 
+##  [9] &quot;drinks.strIngredient2&quot;  &quot;drinks.strIngredient3&quot; 
+## [11] &quot;drinks.strIngredient4&quot;  &quot;drinks.strIngredient5&quot; 
+## [13] &quot;drinks.strIngredient6&quot;  &quot;drinks.strIngredient7&quot; 
+## [15] &quot;drinks.strIngredient8&quot;  &quot;drinks.strIngredient9&quot; 
+## [17] &quot;drinks.strIngredient10&quot; &quot;drinks.strIngredient11&quot;
+## [19] &quot;drinks.strIngredient12&quot; &quot;drinks.strIngredient13&quot;
+## [21] &quot;drinks.strIngredient14&quot; &quot;drinks.strIngredient15&quot;
+## [23] &quot;drinks.strMeasure1&quot;     &quot;drinks.strMeasure2&quot;    
+## [25] &quot;drinks.strMeasure3&quot;     &quot;drinks.strMeasure4&quot;    
+## [27] &quot;drinks.strMeasure5&quot;     &quot;drinks.strMeasure6&quot;    
+## [29] &quot;drinks.strMeasure7&quot;     &quot;drinks.strMeasure8&quot;    
+## [31] &quot;drinks.strMeasure9&quot;     &quot;drinks.strMeasure10&quot;   
+## [33] &quot;drinks.strMeasure11&quot;    &quot;drinks.strMeasure12&quot;   
+## [35] &quot;drinks.strMeasure13&quot;    &quot;drinks.strMeasure14&quot;   
+## [37] &quot;drinks.strMeasure15&quot;    &quot;drinks.dateModified&quot;</code></pre>
 <p>The columns are: drink’s id, drink’s name, category (beer based/cocktail/Soft drink), type of the drink (alcoholic/non-alcoholic), type of the glass to serve the drink in, preparation instructions, link to drink’s image (if available), ingredients (up to 15 ingredients!), corresponding measures for each ingredient and the date of the last modification of the entry.</p>
 <p>Since we are going to use ingredients and their measures, let’s keep only these columns, along with the cocktail’s name.</p>
 <pre class="r"><code>db &lt;- data_base %&gt;%
@@ -326,9 +307,6 @@ db[ db == &quot;\n&quot;] &lt;- NA
 
 # Convert every column to character type
 db &lt;- as.data.frame(lapply(db, as.character), stringsAsFactors=FALSE)
-
-# Replace NAs with zeros
-#db[is.na(db)]&lt;-0
 
 #head(db,n=10)</code></pre>
 </div>
@@ -481,9 +459,17 @@ db_tidy&lt;-db_tidy%&gt;%
   filter(!cocktail.name%in%list_rm)</code></pre>
 <p>Now we have cocktails only with 7 or less ingredients in our dataframe. I, however, saved the recipe of “1-900-F*K-MEUP&quot; on my to-do list for, well… personal investigation.</p>
 <p>As the last step in data preparation let’s trim all columns from whitespaces on both sides and convert everything to the lower case.</p>
-<pre><code>##          used (Mb) gc trigger (Mb) max used (Mb)
-## Ncells 567220 30.3     940480 50.3   885977 47.4
-## Vcells 802811  6.2    2060183 15.8  2060113 15.8</code></pre>
+<pre class="r"><code># Trim both sides from whitespaces (if any), convert everything to the lower case
+db_tidy &lt;- as.data.frame(sapply(db_tidy, str_trim, side = &quot;both&quot;))
+db_tidy &lt;- db_tidy%&gt;%
+   mutate_each(funs(tolower))
+
+
+# Remove intermediate dataframes
+rm(list=setdiff(ls(), &quot;db_tidy&quot;))
+
+# Call garbage collector
+gc()</code></pre>
 </div>
 <div id="most-common-ingredients" class="section level3">
 <h3>Most Common Ingredients</h3>
@@ -547,29 +533,18 @@ mutate(unit=str_trim(unit,side=&quot;both&quot;)) %&gt;%
 #replace double and triple and so on whitspaces with single whitespace
 mutate(unit=gsub(&quot;\\s+&quot;,&quot; &quot;,unit))
 
-head(db_tidyz,n=10)</code></pre>
-<pre><code>##    cocktail.name            ingredient         amount  number numbe  numb
-## 1          zorro               sambuca           2 cl      2      2     2
-## 2          zorro  bailey's irish cream           2 cl      2      2     2
-## 3          zorro white creme de menthe           2 cl      2      2     2
-## 4      zorbatini                 vodka 1 1/4 oz stoli 1 1/4   1 1/4 1 1/4
-## 5      zorbatini                  ouzo         1/4 oz    1/4    1/4   1/4
-## 6      zombie #1             light rum           1 oz      1      1     1
-## 7      zombie #1       creme de almond         1/2 oz    1/2    1/2   1/2
-## 8      zombie #1        sweet and sour       1 1/2 oz  1 1/2  1 1/2 1 1/2
-## 9      zombie #1            triple sec         1/2 oz    1/2    1/2   1/2
-## 10     zombie #1          orange juice       1 1/2 oz  1 1/2  1 1/2 1 1/2
-##      num    nu  nuu     unit
-## 1      2     2 &lt;NA&gt;       cl
-## 2      2     2 &lt;NA&gt;       cl
-## 3      2     2 &lt;NA&gt;       cl
-## 4  1 1/4 1+1/4 &lt;NA&gt; oz stoli
-## 5    1/4   1/4 &lt;NA&gt;       oz
-## 6      1     1 &lt;NA&gt;       oz
-## 7    1/2   1/2 &lt;NA&gt;       oz
-## 8  1 1/2 1+1/2 &lt;NA&gt;       oz
-## 9    1/2   1/2 &lt;NA&gt;       oz
-## 10 1 1/2 1+1/2 &lt;NA&gt;       oz</code></pre>
+head(db_tidyz[,c(2,3,8,10)],n=10)</code></pre>
+<pre><code>##               ingredient         amount    nu     unit
+## 1                sambuca           2 cl     2       cl
+## 2   bailey's irish cream           2 cl     2       cl
+## 3  white creme de menthe           2 cl     2       cl
+## 4                  vodka 1 1/4 oz stoli 1+1/4 oz stoli
+## 5                   ouzo         1/4 oz   1/4       oz
+## 6              light rum           1 oz     1       oz
+## 7        creme de almond         1/2 oz   1/2       oz
+## 8         sweet and sour       1 1/2 oz 1+1/2       oz
+## 9             triple sec         1/2 oz   1/2       oz
+## 10          orange juice       1 1/2 oz 1+1/2       oz</code></pre>
 <p>In the next step we are going to convert all quantifiable units (oz, shots, jiggers, e.t.c) into mL using the proper conversion factor. There can be multiple spellings for the same unit, for example, teaspoon can be spelled as “teaspoon”, “tsp” or even “ts p”. So we have to catch them all!</p>
 <pre class="r"><code># Select only cocktail name, ingredient, nu number and unit column
 db_tidyx &lt;- db_tidyz %&gt;%
@@ -817,7 +792,7 @@ wssplot(sumidf)</code></pre>
 set.seed(1234)
 km.out.ip &lt;- kmeans(sumidf, 6, nstart =25,iter.max=100)
 
-#
+# Tidy the k-means results
 x.km&lt;- tidy(km.out.ip)%&gt;%
    select(cluster,size,withinss)
 
@@ -873,7 +848,7 @@ head(db_clust_top,n=20)</code></pre>
 <p>As can be seen, overall, clusters are quite distinct in their most frequent ingredient, which means k-means did a decent job grouping cocktails together based on their inner products values. So if, as an extra feature for our app, we would ever need to group cocktails by an additional parameter, like overall flavor group or, maybe, the mood they create, unsupervised clustering can be used as a good starting point.</p>
 </div>
 <div id="section-c.-reccomendation-algorithm" class="section level3">
-<h3>Section C. Recommendation </h3>
+<h3>Section C. Reccomendation Algorithm</h3>
 <p>Finally, let’s use inner products matrix and generate ranked recommendation list using small sample of user ratings. There are 15 rated cocktails in user1.csv file each rated on a scale from 1 to 5 (cocktail shaped stars!). We will use rating as a weight: 1 star = -1 (strongly dislike), 2 stars = -0.5 (prefer not to drink), 3 stars = 0.25 (drinkable), 4 stars = 0.75 (almost perfect), 5 stars = 1 (can drink it all day - all night!) and calculate average “preferences” vector in the inner product space. To get the actual recommendations we will use k-d tree algorithm (FNN package) and find 50 nearest neighbors to this averaged vector of user preferences.</p>
 <p>Let’s start with loading list of rated cocktails and converting ratings into weights.</p>
 <pre class="r"><code>library(FNN)
